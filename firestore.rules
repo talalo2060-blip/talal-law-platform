@@ -1,0 +1,72 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isSelf(uid) {
+      return isSignedIn() && request.auth.uid == uid;
+    }
+
+    function isActiveLawyer() {
+      return isSignedIn() &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'lawyer' &&
+        get(/databases/$(database)/documents/users/$(request.auth.uid)).data.status == 'active';
+    }
+
+    // ---- users (clients + lawyers/staff) ----
+    match /users/{uid} {
+      // Self, staff (full directory access), or any signed-in user viewing an
+      // active lawyer's public profile (e.g. a client's assigned-lawyer card).
+      allow read: if isSelf(uid) || isActiveLawyer() ||
+        (isSignedIn() && resource.data.role == 'lawyer' && resource.data.status == 'active');
+
+      // Self-registration: a new client is created 'active', a new lawyer
+      // must be created 'pending' (approval happens via staff update below).
+      allow create: if isSelf(uid) &&
+        ((request.resource.data.role == 'client' && request.resource.data.status == 'active') ||
+         (request.resource.data.role == 'lawyer' && request.resource.data.status == 'pending'));
+
+      // A user may update their own doc as long as they don't touch role/status
+      // (privilege escalation guard). Staff may update anyone (approve/reject,
+      // assign a lawyer to a client, edit lawyer stats, etc).
+      allow update: if isActiveLawyer() ||
+        (isSelf(uid) &&
+         request.resource.data.role == resource.data.role &&
+         request.resource.data.status == resource.data.status);
+
+      allow delete: if false;
+    }
+
+    // ---- cases ----
+    match /cases/{caseId} {
+      allow read: if isSignedIn() && (resource.data.clientId == request.auth.uid || isActiveLawyer());
+      allow create, update: if isActiveLawyer();
+      allow delete: if false;
+    }
+
+    // ---- consultations (tracked, logged-in client requests — separate from
+    // the ephemeral public AI chat, which never touches Firestore) ----
+    match /consultations/{consultId} {
+      allow read: if isSignedIn() && (resource.data.clientId == request.auth.uid || isActiveLawyer());
+      allow create: if isSignedIn() && request.resource.data.clientId == request.auth.uid;
+      // Staff may update anything (respond, resolve). The owning client may only
+      // flag their own consultation for human follow-up — not touch the answer,
+      // citation or any staff reply.
+      allow update: if isActiveLawyer() ||
+        (isSignedIn() && resource.data.clientId == request.auth.uid &&
+         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['needsReply', 'status', 'priority']));
+      allow delete: if false;
+    }
+
+    // ---- appointments ----
+    match /appointments/{apptId} {
+      allow read: if isSignedIn() && (resource.data.clientId == request.auth.uid || isActiveLawyer());
+      allow create, update: if isActiveLawyer();
+      allow delete: if false;
+    }
+  }
+}
