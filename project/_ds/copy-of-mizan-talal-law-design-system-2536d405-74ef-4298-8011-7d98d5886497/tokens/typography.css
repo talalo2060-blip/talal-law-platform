@@ -1,0 +1,57 @@
+/* ============================================================
+   TYPOGRAPHY — IBM Plex Sans Arabic
+   Bilingual (Arabic primary, Latin secondary). Mono for figures.
+   ============================================================ */
+:root {
+  --font-sans: 'IBM Plex Sans Arabic', 'Segoe UI', Tahoma, system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', 'SF Mono', ui-monospace, monospace;
+
+  /* Display family alias = same sans, heavier weights used for headings */
+  --font-display: var(--font-sans);
+
+  /* ---- Weights ---- */
+  --fw-light:    300; /* @kind font */
+  --fw-regular:  400; /* @kind font */
+  --fw-medium:   500; /* @kind font */
+  --fw-semibold: 600; /* @kind font */
+  --fw-bold:     700; /* @kind font */
+
+  /* ---- Type scale (px) — 1.25 major-third-ish, tuned for Arabic ---- */
+  --fs-display: 56px;
+  --fs-h1: 40px;
+  --fs-h2: 32px;
+  --fs-h3: 25px;
+  --fs-h4: 20px;
+  --fs-lg: 18px;
+  --fs-body: 16px;
+  --fs-sm: 14px;
+  --fs-xs: 13px;
+  --fs-2xs: 11px;
+
+  /* ---- Line heights ---- (Arabic needs generous leading) */
+  --lh-tight:   1.2; /* @kind other */
+  --lh-snug:    1.35; /* @kind other */
+  --lh-normal:  1.6; /* @kind other */
+  --lh-relaxed: 1.8; /* @kind other */
+
+  /* ---- Letter spacing (Latin only; Arabic must stay 0) ---- */
+  --ls-tight:  -0.01em; /* @kind other */
+  --ls-normal: 0; /* @kind other */
+  --ls-wide:   0.04em; /* @kind other */
+  --ls-caps:   0.08em; /* @kind other */
+
+  /* ---- Semantic roles ---- */
+  --text-display-size: var(--fs-display);
+  --text-display-weight: var(--fw-bold); /* @kind font */
+  --text-display-lh: var(--lh-tight); /* @kind other */
+
+  --text-heading-weight: var(--fw-semibold); /* @kind font */
+  --text-heading-lh: var(--lh-snug); /* @kind other */
+
+  --text-body-size: var(--fs-body);
+  --text-body-weight: var(--fw-regular); /* @kind font */
+  --text-body-lh: var(--lh-normal); /* @kind other */
+
+  --text-label-weight: var(--fw-medium); /* @kind font */
+  --text-eyebrow-spacing: var(--ls-caps); /* @kind other */
+}
