@@ -1,0 +1,48 @@
+@import './tokens.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+html, body, #root { margin: 0; padding: 0; min-height: 100%; }
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-normal);
+  font-weight: var(--fw-regular);
+  color: var(--text-body);
+  background: var(--surface-page);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+.num, .tabular { font-family: var(--font-mono); font-variant-numeric: tabular-nums; }
+
+h1, h2, h3, h4, h5, h6 { margin: 0; font-weight: var(--fw-semibold); line-height: var(--lh-snug); color: var(--text-strong); }
+
+p { margin: 0; }
+
+a { color: var(--text-link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+button, input, textarea, select { font-family: inherit; }
+
+:focus-visible { outline: none; box-shadow: var(--shadow-focus); border-radius: var(--radius-sm); }
+
+::selection { background: var(--gold-200); color: var(--navy-900); }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: var(--ink-200); border-radius: 8px; border: 2px solid var(--surface-page); }
+
+.eyebrow {
+  font-size: var(--fs-2xs);
+  font-weight: var(--fw-semibold);
+  letter-spacing: var(--ls-caps);
+  text-transform: uppercase;
+  color: var(--text-accent);
+}
+
+@keyframes talalRise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+.animate-in { animation: talalRise .4s var(--ease-standard); }
