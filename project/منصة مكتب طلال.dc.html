@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/tokens/fonts.css">
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/tokens/colors.css">
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/tokens/typography.css">
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/tokens/spacing.css">
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/tokens/radius.css">
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/tokens/shadows.css">
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/tokens/motion.css">
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/tokens/base.css">
+<link rel="stylesheet" href="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/styles.css">
+<script src="_ds/copy-of-mizan-talal-law-design-system-2536d405-74ef-4298-8011-7d98d5886497/_ds_bundle.js"></script>
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  ::-webkit-scrollbar { width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb { background: var(--ink-200); border-radius: 8px; border: 2px solid var(--surface-page); }
+  @keyframes mzUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
+</style>
+</helmet>
+
+<div dir="rtl" lang="ar" style="font-family:var(--font-sans);color:var(--text-body);min-height:100vh;background:var(--surface-page);">
+
+<!-- ==================== LOGIN ==================== -->
+<sc-if value="{{ isLogin }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;min-height:100vh;animation:mzUp .4s var(--ease-standard);">
+
+  <!-- brand panel -->
+  <div style="flex:0 0 44%;background:linear-gradient(155deg,var(--navy-800) 0%,var(--navy-900) 100%);color:var(--ivory);display:flex;flex-direction:column;justify-content:space-between;padding:48px 44px;position:relative;overflow:hidden;">
+    <span style="position:absolute;width:460px;height:460px;left:-160px;bottom:-210px;border:1px solid rgba(184,146,76,0.16);border-radius:50%;"></span>
+    <span style="position:absolute;width:320px;height:320px;left:-80px;bottom:-130px;border:1px solid rgba(184,146,76,0.14);border-radius:50%;"></span>
+    <div style="display:flex;align-items:center;gap:13px;position:relative;z-index:2;">
+      <span style="width:54px;height:54px;border-radius:50%;background:var(--ivory);display:flex;align-items:center;justify-content:center;flex:none;">
+        <img src="assets/mizan-mark.svg" alt="مكتب طلال" style="width:40px;height:40px;" onerror="this.style.display='none'">
+      </span>
+      <div>
+        <b style="display:block;font-size:17px;font-weight:700;color:var(--ivory);">مكتب طلال للمحاماة والاستشارات</b>
+        <span style="font-size:12.5px;color:var(--gold-500);font-weight:500;">المساعد القانوني الذكي</span>
+      </div>
+    </div>
+    <div style="position:relative;z-index:2;">
+      <div style="width:44px;height:3px;background:var(--gold-600);border-radius:2px;margin-bottom:22px;"></div>
+      <h1 style="font-size:34px;font-weight:700;line-height:1.4;margin:0 0 18px;color:var(--ivory);">استشارتك القانونية،<br>موثّقة بالنظام السعودي.</h1>
+      <p style="font-size:16px;line-height:1.85;color:var(--navy-200);max-width:400px;margin:0;">منصة واحدة لإدارة استشاراتك وقضاياك ومتابعة المحامي المسؤول عنك.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px;position:relative;z-index:2;">
+      <span style="display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--navy-200);"><i data-lucide="shield-check" style="width:17px;height:17px;color:var(--gold-500);"></i> سرّية تامة لبياناتك</span>
+      <span style="display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--navy-200);"><i data-lucide="book-marked" style="width:17px;height:17px;color:var(--gold-500);"></i> إجابات موثّقة بمصادرها النظامية</span>
+      <span style="display:inline-flex;align-items:center;gap:10px;font-size:14px;color:var(--navy-200);"><i data-lucide="clock" style="width:17px;height:17px;color:var(--gold-500);"></i> متابعة على مدار الساعة</span>
+    </div>
+  </div>
+
+  <!-- form panel -->
+  <div style="flex:1;display:flex;align-items:center;justify-content:center;padding:40px;overflow-y:auto;">
+    <div style="width:100%;max-width:404px;">
+
+      <button onClick="{{ goConsult }}" style="display:flex;align-items:center;gap:12px;width:100%;padding:14px 16px;margin-bottom:22px;border-radius:var(--radius-md);border:1px solid var(--gold-300);background:var(--gold-50);cursor:pointer;text-align:start;">
+        <span style="width:40px;height:40px;border-radius:var(--radius-md);background:var(--gold-600);color:var(--navy-900);display:inline-flex;align-items:center;justify-content:center;flex:none;"><i data-lucide="sparkles" style="width:20px;height:20px;"></i></span>
+        <span style="flex:1;"><b style="display:block;font-size:14.5px;color:var(--navy-800);">استشارة قانونية مجانية بالذكاء الاصطناعي</b><span style="font-size:12.5px;color:var(--text-muted);">متاحة للجميع — بدون تسجيل دخول</span></span>
+        <i data-lucide="arrow-left" style="width:18px;height:18px;color:var(--gold-700);flex:none;"></i>
+      </button>
+      <div style="display:flex;align-items:center;gap:14px;margin:0 0 22px;color:var(--text-subtle);font-size:13px;"><span style="flex:1;height:1px;background:var(--border-subtle);"></span>أو سجّل دخولك<span style="flex:1;height:1px;background:var(--border-subtle);"></span></div>
+
+      <!-- role segmented -->
+      <div style="display:flex;gap:4px;padding:4px;background:var(--surface-sunken);border-radius:var(--radius-md);margin-bottom:28px;">
+        <button onClick="{{ pickClient }}" style="{{ segClientStyle }}"><i data-lucide="user" style="width:18px;height:18px;"></i> عميل</button>
+        <button onClick="{{ pickStaff }}" style="{{ segStaffStyle }}"><i data-lucide="scale" style="width:18px;height:18px;"></i> موظف المكتب</button>
+      </div>
+
+      <h2 style="font-size:26px;font-weight:700;color:var(--text-strong);margin:0 0 7px;">{{ loginTitle }}</h2>
+      <p style="font-size:15px;color:var(--text-muted);margin:0 0 26px;line-height:1.6;">{{ loginSub }}</p>
+
+      <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:16px;">
+        <label style="font-size:14px;font-weight:500;color:var(--text-body);">البريد الإلكتروني</label>
+        <input type="email" placeholder="name@example.com" style="direction:ltr;text-align:right;font-family:var(--font-sans);font-size:15px;color:var(--text-strong);height:46px;padding:0 14px;background:var(--white);border:1px solid var(--border-default);border-radius:var(--radius-input);box-shadow:var(--shadow-inset);outline:none;">
+      </div>
+      <div style="display:flex;flex-direction:column;gap:7px;margin-bottom:14px;">
+        <label style="font-size:14px;font-weight:500;color:var(--text-body);">كلمة المرور</label>
+        <input type="password" placeholder="••••••••" value="demo1234" style="font-family:var(--font-sans);font-size:15px;color:var(--text-strong);height:46px;padding:0 14px;background:var(--white);border:1px solid var(--border-default);border-radius:var(--radius-input);box-shadow:var(--shadow-inset);outline:none;">
+      </div>
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin:2px 0 22px;font-size:13.5px;">
+        <label style="display:inline-flex;align-items:center;gap:8px;color:var(--text-muted);cursor:pointer;"><input type="checkbox" style="width:16px;height:16px;accent-color:var(--navy-800);"> تذكّرني</label>
+        <a href="#" style="font-weight:600;color:var(--navy-600);text-decoration:none;">نسيت كلمة المرور؟</a>
+      </div>
+
+      <button onClick="{{ doLogin }}" style="display:flex;align-items:center;justify-content:center;gap:8px;width:100%;height:50px;border:1px solid var(--navy-800);border-radius:var(--radius-button);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:16px;font-weight:600;cursor:pointer;transition:var(--transition-color);">دخول</button>
+
+      <div style="display:flex;align-items:center;gap:14px;margin:20px 0;color:var(--text-subtle);font-size:13px;"><span style="flex:1;height:1px;background:var(--border-subtle);"></span>أو<span style="flex:1;height:1px;background:var(--border-subtle);"></span></div>
+
+      <button onClick="{{ doLogin }}" style="display:flex;align-items:center;justify-content:center;gap:12px;width:100%;height:50px;border:1px solid var(--border-default);border-radius:var(--radius-button);background:var(--white);color:var(--navy-800);font-family:var(--font-sans);font-size:15px;font-weight:600;cursor:pointer;">
+        <span style="display:inline-flex;align-items:center;justify-content:center;padding:5px 12px;border-radius:var(--radius-sm);background:#1F9D8F;color:#fff;font-size:15px;font-weight:700;">نفاذ</span>
+        الدخول عبر النفاذ الوطني الموحّد
+      </button>
+
+      <div style="text-align:center;font-size:14px;color:var(--text-muted);margin-top:22px;">{{ switchPrompt }} <a href="#" style="font-weight:600;color:var(--navy-700);text-decoration:none;">{{ switchAction }}</a></div>
+
+      <div style="display:flex;gap:9px;align-items:flex-start;margin-top:22px;padding:11px 13px;background:var(--gold-50);border:1px solid var(--border-subtle);border-inline-start:3px solid var(--gold-600);border-radius:var(--radius-md);font-size:12.5px;color:var(--text-muted);line-height:1.6;">
+        <i data-lucide="info" style="width:16px;height:16px;flex:none;color:var(--gold-700);margin-top:1px;"></i>
+        <span>عرض توضيحي — اضغط «دخول» للانتقال إلى {{ loginDest }}.</span>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ==================== FREE AI CONSULTATION (public) ==================== -->
+<sc-if value="{{ isConsult }}" hint-placeholder-val="{{ false }}">
+<div style="min-height:100vh;display:flex;flex-direction:column;background:var(--surface-page);animation:mzUp .4s var(--ease-standard);">
+  <header style="display:flex;align-items:center;justify-content:space-between;padding:14px 32px;background:var(--surface-card);border-bottom:1px solid var(--border-subtle);position:sticky;top:0;z-index:10;">
+    <div style="display:flex;align-items:center;gap:11px;">
+      <span style="width:42px;height:42px;border-radius:50%;background:var(--navy-800);display:flex;align-items:center;justify-content:center;flex:none;"><img src="assets/mizan-mark.svg" style="width:26px;height:26px;filter:brightness(0) invert(1);" onerror="this.style.display='none'" alt="مكتب طلال"></span>
+      <div><b style="display:block;font-size:15px;color:var(--text-strong);">مكتب طلال للمحاماة والاستشارات</b><span style="font-size:12px;color:var(--text-muted);">المساعد القانوني الذكي</span></div>
+    </div>
+    <button onClick="{{ backLogin }}" style="height:40px;padding:0 18px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:13.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:7px;"><i data-lucide="log-in" style="width:16px;height:16px;"></i> تسجيل الدخول</button>
+  </header>
+
+  <div style="flex:1;width:100%;max-width:860px;margin:0 auto;padding:28px 24px 40px;display:flex;flex-direction:column;">
+    <div style="text-align:center;margin-bottom:24px;">
+      <span style="display:inline-flex;align-items:center;gap:7px;padding:5px 14px;border-radius:var(--radius-pill);background:var(--gold-100);color:var(--gold-800);font-size:12.5px;font-weight:600;margin-bottom:14px;"><i data-lucide="sparkles" style="width:15px;height:15px;"></i> مجانية بالكامل · بدون تسجيل</span>
+      <h1 style="font-size:28px;font-weight:700;color:var(--text-strong);margin:0 0 8px;">استشارتك القانونية الأولى، الآن</h1>
+      <p style="font-size:15px;color:var(--text-muted);margin:0 auto;max-width:560px;line-height:1.7;">اطرح سؤالك القانوني واحصل على إجابة موثّقة بالأنظمة السعودية، مع اقتراح المحامي المختص من مكتب طلال لمتابعة قضيتك.</p>
+    </div>
+
+    <div style="flex:1;background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);display:flex;flex-direction:column;overflow:hidden;">
+      <div style="flex:1;padding:22px;display:flex;flex-direction:column;gap:18px;overflow-y:auto;max-height:440px;">
+        <sc-for list="{{ messages }}" as="m" hint-placeholder-count="1">
+          <sc-if value="{{ m.isUser }}" hint-placeholder-val="{{ false }}">
+            <div style="align-self:flex-end;max-width:78%;background:var(--navy-800);color:var(--ivory);padding:12px 16px;border-radius:14px 14px 14px 4px;font-size:14.5px;line-height:1.7;">{{ m.text }}</div>
+          </sc-if>
+          <sc-if value="{{ m.isBot }}" hint-placeholder-val="{{ true }}">
+            <div style="display:flex;gap:12px;align-items:flex-start;max-width:92%;">
+              <span style="width:38px;height:38px;border-radius:50%;background:var(--navy-800);display:inline-flex;align-items:center;justify-content:center;flex:none;"><img src="assets/mizan-mark.svg" style="width:24px;height:24px;filter:brightness(0) invert(1);" onerror="this.style.display='none'" alt=""></span>
+              <div style="flex:1;background:var(--surface-raised);border:1px solid var(--border-subtle);border-radius:4px 14px 14px 14px;padding:14px 16px;">
+                <div style="font-size:14.5px;line-height:1.85;color:var(--text-body);">{{ m.text }}</div>
+                <sc-if value="{{ m.hasCite }}" hint-placeholder-val="{{ false }}">
+                  <div style="display:flex;align-items:center;gap:8px;margin-top:12px;padding:9px 12px;background:var(--gold-50);border-inline-start:2.5px solid var(--gold-600);border-radius:var(--radius-sm);font-size:12.5px;color:var(--text-muted);"><i data-lucide="book-marked" style="width:14px;height:14px;flex:none;color:var(--gold-700);"></i> المصدر النظامي: <b style="color:var(--text-body);font-weight:600;">{{ m.src }}</b></div>
+                </sc-if>
+                <sc-if value="{{ m.hasLawyer }}" hint-placeholder-val="{{ false }}">
+                  <div style="margin-top:14px;padding:14px;border:1px solid var(--border-subtle);border-top:2.5px solid var(--gold-600);border-radius:var(--radius-md);background:var(--surface-card);">
+                    <div style="font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--text-subtle);margin-bottom:12px;display:flex;align-items:center;gap:6px;"><i data-lucide="user-check" style="width:14px;height:14px;color:var(--gold-700);"></i> المحامي المختص المقترح من المكتب</div>
+                    <div style="display:flex;align-items:center;gap:12px;">
+                      <span style="width:46px;height:46px;border-radius:50%;background:var(--navy-100);color:var(--navy-800);display:inline-flex;align-items:center;justify-content:center;font-weight:600;flex:none;">{{ m.lawyerInitials }}</span>
+                      <div style="flex:1;min-width:0;"><b style="font-size:15px;color:var(--text-strong);">{{ m.lawyerName }}</b><div style="font-size:12.5px;color:var(--text-muted);">{{ m.lawyerSpec }}</div><div style="display:flex;align-items:center;gap:4px;margin-top:3px;color:var(--gold-700);font-size:12.5px;font-weight:600;"><i data-lucide="star" style="width:13px;height:13px;fill:var(--gold-500);color:var(--gold-500);"></i> {{ m.lawyerRating }}</div></div>
+                      <button onClick="{{ m.book }}" style="height:40px;padding:0 18px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:13.5px;font-weight:600;cursor:pointer;flex:none;">احجز استشارة</button>
+                    </div>
+                  </div>
+                </sc-if>
+              </div>
+            </div>
+          </sc-if>
+        </sc-for>
+      </div>
+
+      <div style="border-top:1px solid var(--border-subtle);padding:16px 18px;background:var(--surface-card);">
+        <div style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+          <sc-for list="{{ consultChips }}" as="chip" hint-placeholder-count="4">
+            <button onClick="{{ chip.onClick }}" style="padding:7px 13px;border-radius:var(--radius-pill);border:1px solid var(--border-default);background:var(--white);color:var(--navy-700);font-family:var(--font-sans);font-size:12.5px;font-weight:500;cursor:pointer;">{{ chip.text }}</button>
+          </sc-for>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;">
+          <input value="{{ consultInput }}" onInput="{{ onConsultInput }}" onKeyDown="{{ onConsultKey }}" placeholder="اكتب سؤالك القانوني هنا…" style="flex:1;font-family:var(--font-sans);font-size:14.5px;color:var(--text-strong);height:48px;padding:0 16px;background:var(--white);border:1px solid var(--border-default);border-radius:var(--radius-md);box-shadow:var(--shadow-inset);outline:none;">
+          <button onClick="{{ sendConsult }}" style="width:48px;height:48px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;flex:none;"><i data-lucide="arrow-up" style="width:20px;height:20px;"></i></button>
+        </div>
+        <div style="display:flex;gap:8px;align-items:flex-start;margin-top:12px;font-size:12px;color:var(--text-subtle);line-height:1.6;"><i data-lucide="info" style="width:14px;height:14px;flex:none;margin-top:1px;"></i><span>استشارة أولية تعتمد على الذكاء الاصطناعي وقد تحتوي أخطاء. لا تُغني عن مراجعة محامٍ مرخّص.</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ==================== CLIENT DASHBOARD ==================== -->
+<sc-if value="{{ isClient }}" hint-placeholder-val="{{ false }}">
+<div style="max-width:1120px;margin:0 auto;padding:0 32px 56px;animation:mzUp .4s var(--ease-standard);">
+
+  <!-- topbar -->
+  <div style="display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border-subtle);margin-bottom:32px;position:sticky;top:0;background:var(--surface-page);z-index:10;">
+    <div style="display:flex;align-items:center;gap:12px;">
+      <span style="width:42px;height:42px;border-radius:50%;background:var(--navy-800);display:flex;align-items:center;justify-content:center;flex:none;"><img src="assets/mizan-mark.svg" style="width:26px;height:26px;filter:brightness(0) invert(1);" onerror="this.style.display='none'"></span>
+      <div><b style="display:block;font-size:15px;color:var(--text-strong);">مكتب طلال للمحاماة والاستشارات</b><span style="font-size:12px;color:var(--text-muted);">بوابة العميل</span></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:14px;">
+      <button style="width:40px;height:40px;border-radius:50%;border:1px solid var(--border-subtle);background:var(--white);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--navy-700);position:relative;"><i data-lucide="bell" style="width:18px;height:18px;"></i><span style="position:absolute;top:8px;left:8px;width:7px;height:7px;border-radius:50%;background:var(--gold-600);"></span></button>
+      <div style="display:flex;align-items:center;gap:10px;">
+        <div style="text-align:left;"><b style="display:block;font-size:13.5px;color:var(--text-strong);">عبدالعزيز المطيري</b><span style="font-size:11.5px;color:var(--text-muted);">عميل</span></div>
+        <span style="width:40px;height:40px;border-radius:50%;background:var(--gold-100);color:var(--gold-800);display:inline-flex;align-items:center;justify-content:center;font-weight:600;">عم</span>
+      </div>
+      <button onClick="{{ logout }}" style="height:40px;padding:0 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);background:var(--white);color:var(--navy-800);font-family:var(--font-sans);font-size:13.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:7px;"><i data-lucide="log-out" style="width:16px;height:16px;"></i> خروج</button>
+    </div>
+  </div>
+
+  <div style="margin-bottom:28px;">
+    <h1 style="font-size:27px;font-weight:700;color:var(--text-strong);margin:0 0 6px;">أهلاً، عبدالعزيز 👋</h1>
+    <p style="font-size:15px;color:var(--text-muted);margin:0;">هذه نظرة سريعة على استشاراتك وقضاياك والمحامي المسؤول عنك.</p>
+  </div>
+
+  <!-- stat row -->
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-bottom:24px;">
+    <sc-for list="{{ clientStats }}" as="s" hint-placeholder-count="3">
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:20px 22px;display:flex;align-items:center;gap:16px;">
+        <span style="width:46px;height:46px;border-radius:var(--radius-md);background:var(--gold-100);color:var(--gold-700);display:inline-flex;align-items:center;justify-content:center;flex:none;"><i data-lucide="{{ s.icon }}" style="width:22px;height:22px;"></i></span>
+        <div><div style="font-family:var(--font-mono);font-size:26px;font-weight:700;color:var(--text-strong);line-height:1;">{{ s.value }}</div><div style="font-size:13px;color:var(--text-muted);margin-top:5px;">{{ s.label }}</div></div>
+      </div>
+    </sc-for>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 320px;gap:24px;align-items:start;">
+    <!-- left: tabs -->
+    <div>
+      <div style="display:flex;gap:4px;border-bottom:1px solid var(--border-subtle);margin-bottom:20px;">
+        <button onClick="{{ tabConsult }}" style="{{ tabConsultStyle }}">استشاراتي<span style="margin-inline-start:6px;font-family:var(--font-mono);font-size:12px;color:var(--text-subtle);">{{ consultCount }}</span></button>
+        <button onClick="{{ tabCases }}" style="{{ tabCasesStyle }}">قضاياي<span style="margin-inline-start:6px;font-family:var(--font-mono);font-size:12px;color:var(--text-subtle);">{{ caseCount }}</span></button>
+      </div>
+
+      <!-- consultations -->
+      <sc-if value="{{ showConsult }}" hint-placeholder-val="{{ true }}">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <sc-for list="{{ consultations }}" as="c" hint-placeholder-count="3">
+          <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:18px 20px;">
+            <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:10px;">
+              <div style="display:flex;gap:12px;align-items:flex-start;">
+                <span style="width:36px;height:36px;border-radius:var(--radius-md);background:var(--navy-50);color:var(--navy-700);display:inline-flex;align-items:center;justify-content:center;flex:none;"><i data-lucide="message-square-text" style="width:18px;height:18px;"></i></span>
+                <div><div style="font-size:15px;font-weight:600;color:var(--text-strong);line-height:1.5;">{{ c.q }}</div><div style="font-size:12.5px;color:var(--text-subtle);margin-top:4px;">{{ c.date }}</div></div>
+              </div>
+              <span style="{{ c.badgeStyle }}">{{ c.status }}</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px;margin-top:6px;padding:9px 12px;background:var(--gold-50);border-inline-start:2.5px solid var(--gold-600);border-radius:var(--radius-sm);font-size:12.5px;color:var(--text-muted);">
+              <i data-lucide="book-marked" style="width:14px;height:14px;flex:none;color:var(--gold-700);"></i> المصدر النظامي: <b style="color:var(--text-body);font-weight:600;">{{ c.src }}</b>
+            </div>
+          </div>
+        </sc-for>
+        <button onClick="{{ newConsult }}" style="align-self:flex-start;height:44px;padding:0 20px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:14.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:8px;"><i data-lucide="plus" style="width:17px;height:17px;"></i> استشارة جديدة</button>
+      </div>
+      </sc-if>
+
+      <!-- cases -->
+      <sc-if value="{{ showCases }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:14px;">
+        <sc-for list="{{ cases }}" as="k" hint-placeholder-count="3">
+          <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:18px 20px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px;">
+              <div style="display:flex;align-items:center;gap:12px;">
+                <span style="font-family:var(--font-mono);font-size:12px;color:var(--navy-600);background:var(--navy-50);padding:3px 8px;border-radius:var(--radius-sm);">{{ k.id }}</span>
+                <b style="font-size:15.5px;font-weight:600;color:var(--text-strong);">{{ k.title }}</b>
+              </div>
+              <span style="{{ k.badgeStyle }}">{{ k.status }}</span>
+            </div>
+            <div style="height:7px;border-radius:4px;background:var(--surface-sunken);overflow:hidden;margin-bottom:10px;"><div style="{{ k.barStyle }}"></div></div>
+            <div style="display:flex;align-items:center;justify-content:space-between;font-size:12.5px;color:var(--text-muted);">
+              <span style="display:inline-flex;align-items:center;gap:6px;"><i data-lucide="scale" style="width:14px;height:14px;"></i> {{ k.lawyer }}</span>
+              <span style="display:inline-flex;align-items:center;gap:6px;"><i data-lucide="calendar" style="width:14px;height:14px;"></i> التالي: {{ k.next }}</span>
+            </div>
+          </div>
+        </sc-for>
+      </div>
+      </sc-if>
+    </div>
+
+    <!-- right: assigned lawyer + appointment -->
+    <div style="display:flex;flex-direction:column;gap:20px;">
+      <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-top:3px solid var(--gold-600);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:22px;">
+        <div style="font-size:12px;font-weight:600;letter-spacing:.04em;color:var(--text-subtle);margin-bottom:16px;">المحامي المسؤول عني</div>
+        <div style="display:flex;flex-direction:column;align-items:center;text-align:center;">
+          <span style="width:72px;height:72px;border-radius:50%;background:var(--navy-100);color:var(--navy-800);display:inline-flex;align-items:center;justify-content:center;font-size:26px;font-weight:600;box-shadow:0 0 0 2px var(--surface-card),0 0 0 5px var(--gold-500);margin-bottom:14px;">سع</span>
+          <b style="font-size:17px;color:var(--text-strong);">أ. سارة العتيبي</b>
+          <span style="font-size:13px;color:var(--text-muted);margin-top:3px;">محامية — قانون تجاري وشركات</span>
+          <div style="display:flex;align-items:center;gap:5px;margin-top:8px;color:var(--gold-700);font-size:13px;font-weight:600;"><i data-lucide="star" style="width:15px;height:15px;fill:var(--gold-500);color:var(--gold-500);"></i> 4.9 · 12 قضية</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:18px;">
+          <button style="flex:1;height:42px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:13.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:7px;"><i data-lucide="message-square" style="width:16px;height:16px;"></i> مراسلة</button>
+          <button style="width:44px;height:42px;border-radius:var(--radius-md);border:1px solid var(--border-default);background:var(--white);color:var(--navy-800);cursor:pointer;display:inline-flex;align-items:center;justify-content:center;"><i data-lucide="phone" style="width:16px;height:16px;"></i></button>
+        </div>
+      </div>
+
+      <div style="background:var(--navy-800);border-radius:var(--radius-card);box-shadow:var(--shadow-md);padding:22px;color:var(--ivory);">
+        <div style="display:flex;align-items:center;gap:8px;font-size:12px;font-weight:600;color:var(--gold-500);margin-bottom:14px;"><i data-lucide="calendar-clock" style="width:16px;height:16px;"></i> الموعد القادم</div>
+        <div style="font-size:17px;font-weight:700;margin-bottom:4px;">جلسة قضية CS-2041</div>
+        <div style="font-size:13.5px;color:var(--navy-200);line-height:1.7;">الخميس ٤ يوليو ٢٠٢٦ · ١٠:٠٠ ص<br>المحكمة التجارية — الرياض</div>
+        <button style="margin-top:16px;width:100%;height:42px;border-radius:var(--radius-md);border:1px solid var(--gold-600);background:var(--gold-600);color:var(--navy-900);font-family:var(--font-sans);font-size:13.5px;font-weight:600;cursor:pointer;">إضافة إلى التقويم</button>
+      </div>
+    </div>
+  </div>
+</div>
+</sc-if>
+
+<!-- ==================== ADMIN DASHBOARD ==================== -->
+<sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;min-height:100vh;">
+
+  <!-- sidebar -->
+  <aside style="flex:0 0 264px;background:linear-gradient(180deg,var(--navy-800),var(--navy-900));color:var(--ivory);display:flex;flex-direction:column;padding:22px 16px;position:sticky;top:0;height:100vh;">
+    <div style="display:flex;align-items:center;gap:11px;padding:6px 8px 20px;">
+      <span style="width:40px;height:40px;border-radius:50%;background:var(--ivory);display:flex;align-items:center;justify-content:center;flex:none;"><img src="assets/mizan-mark.svg" style="width:28px;height:28px;" onerror="this.style.display='none'"></span>
+      <div><b style="display:block;font-size:14px;color:var(--ivory);">مكتب طلال</b><span style="font-size:11px;color:var(--gold-500);">لوحة الإدارة</span></div>
+    </div>
+    <nav style="display:flex;flex-direction:column;gap:4px;flex:1;">
+      <sc-for list="{{ navItems }}" as="n" hint-placeholder-count="5">
+        <button onClick="{{ n.onClick }}" style="{{ n.style }}">
+          <i data-lucide="{{ n.icon }}" style="width:19px;height:19px;flex:none;"></i>
+          <span style="flex:1;text-align:start;">{{ n.label }}</span>
+          <sc-if value="{{ n.hasBadge }}" hint-placeholder-val="{{ false }}"><span style="min-width:20px;height:20px;padding:0 6px;border-radius:var(--radius-pill);background:var(--gold-600);color:var(--navy-900);font-size:11.5px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">{{ n.badge }}</span></sc-if>
+        </button>
+      </sc-for>
+    </nav>
+    <button onClick="{{ logout }}" style="display:flex;align-items:center;gap:11px;padding:11px 14px;border-radius:var(--radius-md);border:none;background:rgba(255,255,255,.06);color:var(--navy-200);font-family:var(--font-sans);font-size:14px;font-weight:500;cursor:pointer;"><i data-lucide="log-out" style="width:18px;height:18px;"></i> تسجيل الخروج</button>
+  </aside>
+
+  <!-- main -->
+  <main style="flex:1;min-width:0;display:flex;flex-direction:column;">
+    <!-- topbar -->
+    <header style="display:flex;align-items:center;justify-content:space-between;gap:20px;padding:16px 32px;background:var(--surface-card);border-bottom:1px solid var(--border-subtle);position:sticky;top:0;z-index:10;">
+      <div><h1 style="font-size:20px;font-weight:700;color:var(--text-strong);margin:0;">{{ navTitle }}</h1><p style="font-size:12.5px;color:var(--text-muted);margin:2px 0 0;">{{ navSubtitle }}</p></div>
+      <div style="display:flex;align-items:center;gap:14px;">
+        <div style="display:flex;align-items:center;gap:8px;height:40px;padding:0 14px;background:var(--surface-sunken);border-radius:var(--radius-pill);width:240px;color:var(--text-muted);"><i data-lucide="search" style="width:17px;height:17px;"></i><span style="font-size:13.5px;">بحث…</span></div>
+        <button style="width:40px;height:40px;border-radius:50%;border:1px solid var(--border-subtle);background:var(--white);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;color:var(--navy-700);position:relative;"><i data-lucide="bell" style="width:18px;height:18px;"></i><span style="position:absolute;top:8px;left:8px;width:7px;height:7px;border-radius:50%;background:var(--gold-600);"></span></button>
+        <div style="display:flex;align-items:center;gap:10px;padding-inline-start:6px;border-inline-start:1px solid var(--border-subtle);">
+          <div style="text-align:left;"><b style="display:block;font-size:13.5px;color:var(--text-strong);">م. طلال الشمري</b><span style="font-size:11.5px;color:var(--text-muted);">مدير النظام</span></div>
+          <span style="width:40px;height:40px;border-radius:50%;background:var(--navy-800);color:var(--ivory);display:inline-flex;align-items:center;justify-content:center;font-weight:600;">طش</span>
+        </div>
+      </div>
+    </header>
+
+    <div style="flex:1;padding:28px 32px 48px;">
+
+      <!-- OVERVIEW -->
+      <sc-if value="{{ navOverview }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:24px;animation:mzUp .35s var(--ease-standard);">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
+          <sc-for list="{{ kpis }}" as="k" hint-placeholder-count="4">
+            <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:20px;">
+              <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;">
+                <span style="width:40px;height:40px;border-radius:var(--radius-md);background:var(--gold-100);color:var(--gold-700);display:inline-flex;align-items:center;justify-content:center;"><i data-lucide="{{ k.icon }}" style="width:20px;height:20px;"></i></span>
+                <span style="font-size:12px;font-weight:600;color:var(--success-600);display:inline-flex;align-items:center;gap:3px;"><i data-lucide="trending-up" style="width:14px;height:14px;"></i>{{ k.delta }}</span>
+              </div>
+              <div style="font-family:var(--font-mono);font-size:27px;font-weight:700;color:var(--text-strong);line-height:1;">{{ k.value }}</div>
+              <div style="font-size:13px;color:var(--text-muted);margin-top:6px;">{{ k.label }}</div>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:24px;align-items:start;">
+          <!-- trend chart -->
+          <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:24px;">
+            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;"><b style="font-size:16px;color:var(--text-strong);">الاستشارات الشهرية</b><span style="font-size:12.5px;color:var(--text-muted);">آخر ٧ أشهر</span></div>
+            <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:14px;height:170px;">
+              <sc-for list="{{ trend }}" as="b" hint-placeholder-count="7">
+                <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end;">
+                  <span style="font-family:var(--font-mono);font-size:11.5px;color:var(--text-subtle);">{{ b.value }}</span>
+                  <div style="{{ b.style }}"></div>
+                  <span style="font-size:12px;color:var(--text-muted);">{{ b.label }}</span>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+          <!-- case breakdown -->
+          <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:24px;">
+            <b style="font-size:16px;color:var(--text-strong);display:block;margin-bottom:20px;">توزيع القضايا حسب النوع</b>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <sc-for list="{{ breakdown }}" as="d" hint-placeholder-count="4">
+                <div>
+                  <div style="display:flex;align-items:center;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:var(--text-body);">{{ d.label }}</span><span style="font-family:var(--font-mono);color:var(--text-muted);">{{ d.pct }}%</span></div>
+                  <div style="height:8px;border-radius:4px;background:var(--surface-sunken);overflow:hidden;"><div style="{{ d.style }}"></div></div>
+                </div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+
+        <!-- pending approvals preview -->
+        <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:24px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:16px;">
+            <div style="display:flex;align-items:center;gap:10px;"><b style="font-size:16px;color:var(--text-strong);">طلبات عضوية المحامين</b><span style="min-width:22px;height:22px;padding:0 7px;border-radius:var(--radius-pill);background:var(--gold-100);color:var(--gold-800);font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">{{ pendingCount }}</span></div>
+            <button onClick="{{ goLawyers }}" style="font-size:13.5px;font-weight:600;color:var(--navy-700);background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:5px;">عرض الكل <i data-lucide="arrow-left" style="width:15px;height:15px;"></i></button>
+          </div>
+          <sc-if value="{{ hasPending }}" hint-placeholder-val="{{ true }}">
+          <div style="display:flex;flex-direction:column;">
+            <sc-for list="{{ pendingPreview }}" as="p" hint-placeholder-count="2">
+              <div style="display:flex;align-items:center;gap:14px;padding:12px 0;border-bottom:1px solid var(--border-subtle);">
+                <span style="width:40px;height:40px;border-radius:50%;background:var(--gold-100);color:var(--gold-800);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:14px;flex:none;">{{ p.initials }}</span>
+                <div style="flex:1;min-width:0;"><b style="font-size:14.5px;color:var(--text-strong);">{{ p.name }}</b><div style="font-size:12.5px;color:var(--text-muted);">{{ p.spec }} · <span style="font-family:var(--font-mono);">{{ p.lic }}</span></div></div>
+                <span style="font-size:12px;color:var(--text-subtle);">{{ p.date }}</span>
+                <div style="display:flex;gap:8px;">
+                  <button onClick="{{ p.approve }}" style="height:34px;padding:0 14px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;">قبول</button>
+                  <button onClick="{{ p.reject }}" style="height:34px;padding:0 14px;border-radius:var(--radius-md);border:1px solid var(--border-default);background:var(--white);color:var(--danger-600);font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;">رفض</button>
+                </div>
+              </div>
+            </sc-for>
+          </div>
+          </sc-if>
+          <sc-if value="{{ noPending }}" hint-placeholder-val="{{ false }}"><div style="padding:20px;text-align:center;color:var(--text-subtle);font-size:13.5px;">لا توجد طلبات معلّقة حالياً.</div></sc-if>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- LAWYERS -->
+      <sc-if value="{{ navLawyers }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:24px;animation:mzUp .35s var(--ease-standard);">
+        <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);overflow:hidden;">
+          <div style="padding:18px 22px;border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;gap:10px;"><i data-lucide="user-plus" style="width:18px;height:18px;color:var(--gold-700);"></i><b style="font-size:15.5px;color:var(--text-strong);">طلبات التوظيف والعضوية</b><span style="min-width:22px;height:22px;padding:0 7px;border-radius:var(--radius-pill);background:var(--gold-100);color:var(--gold-800);font-size:12px;font-weight:700;display:inline-flex;align-items:center;justify-content:center;">{{ pendingCount }}</span></div>
+          <sc-for list="{{ lawyerRequests }}" as="p" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 22px;border-bottom:1px solid var(--border-subtle);">
+              <span style="width:42px;height:42px;border-radius:50%;background:var(--navy-100);color:var(--navy-800);display:inline-flex;align-items:center;justify-content:center;font-weight:600;flex:none;">{{ p.initials }}</span>
+              <div style="flex:1;min-width:0;"><b style="font-size:14.5px;color:var(--text-strong);">{{ p.name }}</b><div style="font-size:12.5px;color:var(--text-muted);">{{ p.spec }} · رخصة <span style="font-family:var(--font-mono);">{{ p.lic }}</span></div></div>
+              <span style="font-size:12px;color:var(--text-subtle);width:70px;">{{ p.date }}</span>
+              <sc-if value="{{ p.isPending }}" hint-placeholder-val="{{ true }}">
+                <div style="display:flex;gap:8px;">
+                  <button onClick="{{ p.approve }}" style="height:36px;padding:0 16px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;"><i data-lucide="check" style="width:15px;height:15px;"></i>قبول</button>
+                  <button onClick="{{ p.reject }}" style="height:36px;padding:0 16px;border-radius:var(--radius-md);border:1px solid var(--border-default);background:var(--white);color:var(--danger-600);font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;">رفض</button>
+                </div>
+              </sc-if>
+              <sc-if value="{{ p.isResolved }}" hint-placeholder-val="{{ false }}"><span style="{{ p.resultStyle }}">{{ p.resultLabel }}</span></sc-if>
+            </div>
+          </sc-for>
+        </div>
+
+        <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);overflow:hidden;">
+          <div style="padding:18px 22px;border-bottom:1px solid var(--border-subtle);"><b style="font-size:15.5px;color:var(--text-strong);">المحامون النشطون</b></div>
+          <div style="display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr 0.9fr;padding:12px 22px;background:var(--surface-sunken);font-size:12.5px;font-weight:600;color:var(--text-muted);">
+            <span>المحامي</span><span>التخصص</span><span>القضايا</span><span>التقييم</span><span>الحالة</span>
+          </div>
+          <sc-for list="{{ activeLawyers }}" as="l" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:2fr 1.4fr 1fr 1fr 0.9fr;align-items:center;padding:13px 22px;border-bottom:1px solid var(--border-subtle);font-size:13.5px;color:var(--text-body);">
+              <span style="display:inline-flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:50%;background:var(--navy-100);color:var(--navy-800);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:12.5px;flex:none;">{{ l.initials }}</span><b style="color:var(--text-strong);font-weight:600;">{{ l.name }}</b></span>
+              <span>{{ l.spec }}</span>
+              <span style="font-family:var(--font-mono);">{{ l.cases }}</span>
+              <span style="display:inline-flex;align-items:center;gap:4px;color:var(--gold-700);font-weight:600;"><i data-lucide="star" style="width:14px;height:14px;fill:var(--gold-500);color:var(--gold-500);"></i>{{ l.rating }}</span>
+              <span><span style="display:inline-flex;padding:3px 10px;border-radius:var(--radius-pill);background:var(--success-100);color:var(--success-600);font-size:12px;font-weight:600;">نشط</span></span>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- CLIENTS -->
+      <sc-if value="{{ navClients }}" hint-placeholder-val="{{ false }}">
+      <div style="animation:mzUp .35s var(--ease-standard);background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);overflow:hidden;">
+        <div style="padding:18px 22px;border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;justify-content:space-between;"><b style="font-size:15.5px;color:var(--text-strong);">قائمة العملاء</b><button style="height:38px;padding:0 16px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:13.5px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:7px;"><i data-lucide="plus" style="width:16px;height:16px;"></i> عميل جديد</button></div>
+        <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 0.9fr;padding:12px 22px;background:var(--surface-sunken);font-size:12.5px;font-weight:600;color:var(--text-muted);"><span>العميل</span><span>النوع</span><span>القضايا</span><span>الانضمام</span><span>الحالة</span></div>
+        <sc-for list="{{ clients }}" as="c" hint-placeholder-count="4">
+          <div style="display:grid;grid-template-columns:2fr 1fr 1fr 1fr 0.9fr;align-items:center;padding:13px 22px;border-bottom:1px solid var(--border-subtle);font-size:13.5px;color:var(--text-body);">
+            <span style="display:inline-flex;align-items:center;gap:10px;"><span style="width:34px;height:34px;border-radius:50%;background:var(--gold-100);color:var(--gold-800);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:12.5px;flex:none;">{{ c.initials }}</span><b style="color:var(--text-strong);font-weight:600;">{{ c.name }}</b></span>
+            <span>{{ c.type }}</span>
+            <span style="font-family:var(--font-mono);">{{ c.cases }}</span>
+            <span style="font-family:var(--font-mono);">{{ c.joined }}</span>
+            <span><span style="{{ c.badgeStyle }}">{{ c.status }}</span></span>
+          </div>
+        </sc-for>
+      </div>
+      </sc-if>
+
+      <!-- CASES -->
+      <sc-if value="{{ navCases }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:24px;animation:mzUp .35s var(--ease-standard);">
+        <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);overflow:hidden;">
+          <div style="padding:18px 22px;border-bottom:1px solid var(--border-subtle);"><b style="font-size:15.5px;color:var(--text-strong);">القضايا</b></div>
+          <div style="display:grid;grid-template-columns:1fr 1.6fr 1.4fr 1fr 1fr;padding:12px 22px;background:var(--surface-sunken);font-size:12.5px;font-weight:600;color:var(--text-muted);"><span>الرقم</span><span>العميل</span><span>المحامي</span><span>النوع</span><span>الحالة</span></div>
+          <sc-for list="{{ adminCases }}" as="k" hint-placeholder-count="3">
+            <div style="display:grid;grid-template-columns:1fr 1.6fr 1.4fr 1fr 1fr;align-items:center;padding:13px 22px;border-bottom:1px solid var(--border-subtle);font-size:13.5px;color:var(--text-body);">
+              <span style="font-family:var(--font-mono);color:var(--navy-600);">{{ k.id }}</span>
+              <span style="color:var(--text-strong);font-weight:600;">{{ k.client }}</span>
+              <span>{{ k.lawyer }}</span>
+              <span>{{ k.type }}</span>
+              <span><span style="{{ k.badgeStyle }}">{{ k.status }}</span></span>
+            </div>
+          </sc-for>
+        </div>
+
+        <!-- consultations to respond -->
+        <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);overflow:hidden;">
+          <div style="padding:18px 22px;border-bottom:1px solid var(--border-subtle);display:flex;align-items:center;gap:10px;"><i data-lucide="message-square-text" style="width:18px;height:18px;color:var(--gold-700);"></i><b style="font-size:15.5px;color:var(--text-strong);">استشارات بانتظار الرد</b></div>
+          <sc-for list="{{ pendingConsults }}" as="q" hint-placeholder-count="3">
+            <div style="display:flex;align-items:center;gap:14px;padding:14px 22px;border-bottom:1px solid var(--border-subtle);">
+              <span style="width:38px;height:38px;border-radius:50%;background:var(--navy-100);color:var(--navy-800);display:inline-flex;align-items:center;justify-content:center;font-weight:600;font-size:13px;flex:none;">{{ q.initials }}</span>
+              <div style="flex:1;min-width:0;"><b style="font-size:14px;color:var(--text-strong);font-weight:600;">{{ q.q }}</b><div style="font-size:12.5px;color:var(--text-muted);">{{ q.client }} · {{ q.date }}</div></div>
+              <span style="{{ q.badgeStyle }}">{{ q.priority }}</span>
+              <button style="height:36px;padding:0 18px;border-radius:var(--radius-md);border:1px solid var(--navy-800);background:var(--navy-800);color:var(--ivory);font-family:var(--font-sans);font-size:13px;font-weight:600;cursor:pointer;display:inline-flex;align-items:center;gap:6px;"><i data-lucide="reply" style="width:15px;height:15px;"></i>رد</button>
+            </div>
+          </sc-for>
+        </div>
+      </div>
+      </sc-if>
+
+      <!-- REPORTS -->
+      <sc-if value="{{ navReports }}" hint-placeholder-val="{{ false }}">
+      <div style="display:flex;flex-direction:column;gap:24px;animation:mzUp .35s var(--ease-standard);">
+        <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:18px;">
+          <sc-for list="{{ reportStats }}" as="r" hint-placeholder-count="4">
+            <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:20px;">
+              <div style="font-size:13px;color:var(--text-muted);margin-bottom:8px;">{{ r.label }}</div>
+              <div style="font-family:var(--font-mono);font-size:24px;font-weight:700;color:var(--text-strong);">{{ r.value }}</div>
+            </div>
+          </sc-for>
+        </div>
+        <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:24px;">
+          <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:22px;"><b style="font-size:16px;color:var(--text-strong);">الإيرادات الشهرية (ألف ر.س)</b><span style="font-size:12.5px;color:var(--text-muted);">آخر ٧ أشهر</span></div>
+          <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;height:200px;">
+            <sc-for list="{{ revenue }}" as="b" hint-placeholder-count="7">
+              <div style="flex:1;display:flex;flex-direction:column;align-items:center;gap:8px;height:100%;justify-content:flex-end;">
+                <span style="font-family:var(--font-mono);font-size:11.5px;color:var(--text-subtle);">{{ b.value }}</span>
+                <div style="{{ b.style }}"></div>
+                <span style="font-size:12px;color:var(--text-muted);">{{ b.label }}</span>
+              </div>
+            </sc-for>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;">
+          <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:24px;">
+            <b style="font-size:16px;color:var(--text-strong);display:block;margin-bottom:20px;">توزيع القضايا حسب النوع</b>
+            <div style="display:flex;flex-direction:column;gap:16px;">
+              <sc-for list="{{ breakdown }}" as="d" hint-placeholder-count="4">
+                <div><div style="display:flex;align-items:center;justify-content:space-between;font-size:13px;margin-bottom:6px;"><span style="color:var(--text-body);">{{ d.label }}</span><span style="font-family:var(--font-mono);color:var(--text-muted);">{{ d.pct }}%</span></div><div style="height:8px;border-radius:4px;background:var(--surface-sunken);overflow:hidden;"><div style="{{ d.style }}"></div></div></div>
+              </sc-for>
+            </div>
+          </div>
+          <div style="background:var(--surface-card);border:1px solid var(--border-subtle);border-radius:var(--radius-card);box-shadow:var(--shadow-sm);padding:24px;">
+            <b style="font-size:16px;color:var(--text-strong);display:block;margin-bottom:20px;">أداء المحامين</b>
+            <div style="display:flex;flex-direction:column;gap:14px;">
+              <sc-for list="{{ perf }}" as="d" hint-placeholder-count="4">
+                <div style="display:flex;align-items:center;gap:12px;"><span style="width:110px;font-size:13px;color:var(--text-body);">{{ d.label }}</span><div style="flex:1;height:8px;border-radius:4px;background:var(--surface-sunken);overflow:hidden;"><div style="{{ d.style }}"></div></div><span style="font-family:var(--font-mono);font-size:12.5px;color:var(--text-muted);width:34px;">{{ d.pct }}%</span></div>
+              </sc-for>
+            </div>
+          </div>
+        </div>
+      </div>
+      </sc-if>
+
+    </div>
+  </main>
+</div>
+</sc-if>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = {
+    screen: 'login',   // login | client | admin
+    role: 'client',    // client | staff
+    clientTab: 'consult',
+    nav: 'overview',
+    consultInput: '',
+    messages: [{ role: 'assistant', greeting: true, text: 'مرحباً بك في الاستشارة القانونية المجانية من مكتب طلال. اكتب سؤالك القانوني وسأجيبك استناداً إلى الأنظمة السعودية، ثم أقترح لك المحامي المختص المناسب من المكتب.' }],
+    requests: [
+      { id: 1, name: 'أ. منى الشهري', spec: 'قانون الأسرة', lic: 'LIC-448120', date: 'اليوم', status: 'pending' },
+      { id: 2, name: 'أ. فهد القحطاني', spec: 'قانون جنائي', lic: 'LIC-447901', date: 'أمس', status: 'pending' },
+      { id: 3, name: 'أ. ريم الغامدي', spec: 'ملكية فكرية', lic: 'LIC-447555', date: '٣٠ يونيو', status: 'pending' },
+      { id: 4, name: 'أ. ماجد العنزي', spec: 'قانون عمالي', lic: 'LIC-447102', date: '٢٩ يونيو', status: 'pending' },
+    ],
+  };
+
+  componentDidMount() { this.icons(); }
+  componentDidUpdate() { this.icons(); }
+  icons() {
+    if (window.lucide) { try { window.lucide.createIcons({ attrs: { 'stroke-width': 1.8 } }); } catch (e) {} }
+  }
+
+  initials(name) {
+    const clean = String(name).replace(/^(أ\.|م\.|د\.)\s*/, '').trim();
+    return clean.split(/\s+/).slice(0, 2).map(w => w[0]).join('');
+  }
+
+  badge(tone, label) {
+    const map = {
+      success: ['var(--success-100)', 'var(--success-600)'],
+      warning: ['var(--warning-100)', 'var(--warning-600)'],
+      brand:   ['var(--navy-50)', 'var(--navy-700)'],
+      accent:  ['var(--gold-100)', 'var(--gold-800)'],
+      neutral: ['var(--ink-100)', 'var(--ink-700)'],
+      danger:  ['var(--danger-100)', 'var(--danger-600)'],
+    };
+    const [bg, fg] = map[tone] || map.neutral;
+    return { display: 'inline-flex', alignItems: 'center', gap: 5, padding: '3px 11px', borderRadius: 'var(--radius-pill)', background: bg, color: fg, fontSize: 12.5, fontWeight: 600, lineHeight: 1.5, whiteSpace: 'nowrap' };
+  }
+
+  bar(pct, color, radius) {
+    return { width: pct + '%', height: '100%', background: color, borderRadius: radius || '4px', transition: 'width .5s var(--ease-standard)' };
+  }
+  vbar(pct, color) {
+    return { width: '100%', maxWidth: 40, height: pct + '%', background: color, borderRadius: '6px 6px 3px 3px', transition: 'height .5s var(--ease-standard)' };
+  }
+
+  segStyle(active) {
+    return {
+      flex: 1, display: 'inline-flex', alignItems: 'center', justifyContent: 'center', gap: 8, height: 44,
+      border: 'none', cursor: 'pointer', borderRadius: 'var(--radius-sm)', fontFamily: 'var(--font-sans)',
+      fontSize: 15, fontWeight: 600,
+      background: active ? 'var(--surface-card)' : 'transparent',
+      color: active ? 'var(--navy-800)' : 'var(--text-muted)',
+      boxShadow: active ? 'var(--shadow-sm)' : 'none',
+      transition: 'var(--transition-base)',
+    };
+  }
+  tabStyle(active) {
+    return {
+      position: 'relative', padding: '12px 18px', border: 'none', background: 'transparent',
+      fontFamily: 'var(--font-sans)', fontSize: 15, fontWeight: active ? 600 : 500,
+      color: active ? 'var(--navy-800)' : 'var(--text-muted)', cursor: 'pointer',
+      borderBottom: active ? '2.5px solid var(--gold-600)' : '2.5px solid transparent',
+      marginBottom: -1,
+    };
+  }
+  navStyle(active) {
+    return {
+      display: 'flex', alignItems: 'center', gap: 12, padding: '11px 14px', borderRadius: 'var(--radius-md)',
+      border: 'none', cursor: 'pointer', fontFamily: 'var(--font-sans)', fontSize: 14.5, fontWeight: active ? 600 : 500,
+      background: active ? 'rgba(184,146,76,0.16)' : 'transparent',
+      color: active ? 'var(--ivory)' : 'var(--navy-200)',
+      borderInlineEnd: active ? '2.5px solid var(--gold-500)' : '2.5px solid transparent',
+      transition: 'var(--transition-base)',
+    };
+  }
+
+  setNav(k) { this.setState({ nav: k }); }
+  resolve(id, status) {
+    this.setState(s => ({ requests: s.requests.map(r => r.id === id ? { ...r, status } : r) }));
+  }
+
+  classify(q) {
+    const t = String(q);
+    const has = (arr) => arr.some(w => t.includes(w));
+    if (has(['عمل', 'موظف', 'راتب', 'فصل', 'إجازة', 'مكافأة', 'رب العمل', 'استقالة'])) return 'labor';
+    if (has(['إيجار', 'عقار', 'مستأجر', 'مؤجر', 'إخلاء', 'ملكية'])) return 'realestate';
+    if (has(['طلاق', 'زواج', 'حضانة', 'نفقة', 'ميراث', 'أسرة', 'خلع'])) return 'family';
+    if (has(['شركة', 'تجاري', 'علامة تجارية', 'شراكة', 'تأسيس', 'تصفية', 'سجل تجاري', 'شريك'])) return 'commercial';
+    return 'commercial';
+  }
+  answerFor(cat) {
+    const data = {
+      labor: {
+        text: 'بحسب نظام العمل السعودي، لا يجوز فصل العامل من غير سبب مشروع، ويستحق العامل تعويضاً عن الفصل غير المبرر إضافةً إلى مستحقاته النهائية ومكافأة نهاية الخدمة. ويُنصح بتوثيق المراسلات والاحتفاظ بعقد العمل قبل رفع الدعوى أمام المحكمة العمالية.',
+        src: 'نظام العمل — المادة ٧٧ و٨٠',
+        lawyer: { name: 'أ. عبدالله الحربي', spec: 'قانون عمالي', rating: '4.8' },
+      },
+      realestate: {
+        text: 'ينظّم عقد الإيجار العلاقة بين المؤجر والمستأجر، ولا يجوز إخلاء العقار قبل انتهاء المدة إلا في الحالات التي يحددها النظام أو باتفاق الطرفين. ويُشترط توثيق العقد في منصة «إيجار» لضمان حقوق الطرفين وإمكانية التنفيذ.',
+        src: 'نظام الإيجار (إيجار) — المادة ١٢',
+        lawyer: { name: 'أ. خالد الدوسري', spec: 'قانون عقاري', rating: '4.7' },
+      },
+      family: {
+        text: 'تُحدَّد مسائل الحضانة والنفقة وفق مصلحة المحضون الفُضلى، ويحق لطالبها التقدّم إلى محكمة الأحوال الشخصية. وقد نظّمت الأنظمة الحديثة إجراءات التوثيق والحقوق المترتبة على الطلاق بما يحفظ حقوق جميع الأطراف.',
+        src: 'نظام الأحوال الشخصية — المادة ٢٣',
+        lawyer: { name: 'أ. نورة الزهراني', spec: 'أحوال شخصية', rating: '4.6' },
+      },
+      commercial: {
+        text: 'يتطلب تأسيس الشركات وتوثيق عقود الشراكة والعلامات التجارية استيفاء الشروط النظامية وتسجيلها لدى الجهات المختصة. وتُحدَّد حقوق الشركاء والتزاماتهم وفق عقد التأسيس ونظام الشركات، مع مراعاة أحكام الحل والتصفية عند الاقتضاء.',
+        src: 'نظام الشركات — المادة ١٢',
+        lawyer: { name: 'أ. سارة العتيبي', spec: 'تجاري وشركات', rating: '4.9' },
+      },
+    };
+    return data[cat] || data.commercial;
+  }
+  submitConsult(q) {
+    const query = String(q || '').trim();
+    if (!query) return;
+    const a = this.answerFor(this.classify(query));
+    this.setState(s => ({
+      consultInput: '',
+      messages: [...s.messages, { role: 'user', text: query }, { role: 'assistant', text: a.text, src: a.src, lawyer: a.lawyer }],
+    }));
+  }
+
+  renderVals() {
+    const st = this.state;
+    const isClientRole = st.role === 'client';
+
+    // ---- login ----
+    const loginTitle = isClientRole ? 'تسجيل دخول العميل' : 'تسجيل دخول الموظف';
+    const loginSub = isClientRole
+      ? 'أدخل بياناتك للوصول إلى استشاراتك وقضاياك.'
+      : 'دخول فريق المكتب إلى لوحة الإدارة والتحكم.';
+
+    // ---- nav ----
+    const pending = st.requests.filter(r => r.status === 'pending');
+    const pendingCount = pending.length;
+    const navDefs = [
+      { key: 'overview', label: 'نظرة عامة', icon: 'layout-dashboard', title: 'نظرة عامة', sub: 'ملخص أداء المنصة اليوم' },
+      { key: 'lawyers', label: 'المحامون والأعضاء', icon: 'scale', title: 'المحامون والأعضاء', sub: 'إدارة الفريق والموافقة على الطلبات', badge: pendingCount },
+      { key: 'clients', label: 'العملاء', icon: 'users', title: 'العملاء', sub: 'إدارة حسابات العملاء' },
+      { key: 'cases', label: 'القضايا والاستشارات', icon: 'folder-open', title: 'القضايا والاستشارات', sub: 'متابعة القضايا والرد على الاستشارات' },
+      { key: 'reports', label: 'التقارير', icon: 'bar-chart-3', title: 'التقارير والإحصاءات', sub: 'مؤشرات الأداء والإيرادات' },
+    ];
+    const navItems = navDefs.map(n => ({
+      label: n.label, icon: n.icon, hasBadge: !!n.badge, badge: n.badge,
+      style: this.navStyle(st.nav === n.key), onClick: () => this.setNav(n.key),
+    }));
+    const cur = navDefs.find(n => n.key === st.nav) || navDefs[0];
+
+    // ---- client data ----
+    const consultRaw = [
+      { q: 'ما شروط فسخ عقد الإيجار التجاري قبل انتهاء مدته؟', date: 'قبل ساعتين', status: 'مكتملة', tone: 'success', src: 'نظام الإيجار — المادة ١٢' },
+      { q: 'هل يستحق الموظف تعويضاً عن الفصل التعسفي؟', date: 'أمس', status: 'مكتملة', tone: 'success', src: 'نظام العمل — المادة ٧٧' },
+      { q: 'ما إجراءات تسجيل علامة تجارية جديدة؟', date: '٢٨ يونيو', status: 'قيد المعالجة', tone: 'warning', src: 'قيد التوثيق' },
+    ];
+    const consultations = consultRaw.map(c => ({ ...c, badgeStyle: this.badge(c.tone, c.status) }));
+
+    const casesRaw = [
+      { id: 'CS-2041', title: 'نزاع عقد توريد', lawyer: 'أ. سارة العتيبي', status: 'قيد النظر', tone: 'warning', progress: 60, next: 'جلسة ٤ يوليو' },
+      { id: 'CS-1998', title: 'مطالبة مالية', lawyer: 'أ. سارة العتيبي', status: 'نشطة', tone: 'brand', progress: 35, next: 'مذكرة رد' },
+      { id: 'CS-1876', title: 'توثيق عقد شراكة', lawyer: 'أ. خالد الدوسري', status: 'مكتملة', tone: 'success', progress: 100, next: '—' },
+    ];
+    const barColor = { warning: 'var(--gold-600)', brand: 'var(--navy-500)', success: 'var(--success-600)' };
+    const cases = casesRaw.map(k => ({ ...k, badgeStyle: this.badge(k.tone, k.status), barStyle: this.bar(k.progress, barColor[k.tone] || 'var(--navy-500)') }));
+
+    const clientStats = [
+      { icon: 'folder', value: '2', label: 'قضايا نشطة' },
+      { icon: 'message-square-text', value: '8', label: 'استشارات هذا الشهر' },
+      { icon: 'calendar-clock', value: '1', label: 'موعد قادم' },
+    ];
+
+    // ---- admin: kpis ----
+    const kpis = [
+      { icon: 'users', value: '1,284', label: 'إجمالي العملاء', delta: '8.2%' },
+      { icon: 'scale', value: '36', label: 'المحامون النشطون', delta: '3' },
+      { icon: 'folder-open', value: '218', label: 'قضايا مفتوحة', delta: '12' },
+      { icon: 'wallet', value: '842.5K', label: 'الإيرادات (ر.س)', delta: '5.4%' },
+    ];
+
+    const trendRaw = [
+      { label: 'يناير', value: 120 }, { label: 'فبراير', value: 148 }, { label: 'مارس', value: 132 },
+      { label: 'أبريل', value: 176 }, { label: 'مايو', value: 195 }, { label: 'يونيو', value: 172 }, { label: 'يوليو', value: 214 },
+    ];
+    const tMax = Math.max(...trendRaw.map(t => t.value));
+    const trend = trendRaw.map((t, i) => ({ ...t, style: this.vbar(Math.round(t.value / tMax * 100), i === trendRaw.length - 1 ? 'var(--gold-600)' : 'var(--navy-500)') }));
+
+    const revRaw = [
+      { label: 'يناير', value: 610 }, { label: 'فبراير', value: 680 }, { label: 'مارس', value: 655 },
+      { label: 'أبريل', value: 742 }, { label: 'مايو', value: 798 }, { label: 'يونيو', value: 770 }, { label: 'يوليو', value: 842 },
+    ];
+    const rMax = Math.max(...revRaw.map(t => t.value));
+    const revenue = revRaw.map((t, i) => ({ ...t, style: this.vbar(Math.round(t.value / rMax * 100), i === revRaw.length - 1 ? 'var(--gold-600)' : 'var(--navy-500)') }));
+
+    const breakdownRaw = [
+      { label: 'تجاري وشركات', pct: 34 }, { label: 'عمالي', pct: 26 }, { label: 'عقاري', pct: 22 }, { label: 'أحوال شخصية', pct: 18 },
+    ];
+    const breakdown = breakdownRaw.map(d => ({ ...d, style: this.bar(d.pct, 'var(--gold-600)') }));
+
+    const perfRaw = [
+      { label: 'أ. سارة العتيبي', pct: 92 }, { label: 'أ. خالد الدوسري', pct: 84 }, { label: 'أ. عبدالله الحربي', pct: 88 }, { label: 'أ. نورة الزهراني', pct: 76 },
+    ];
+    const perf = perfRaw.map(d => ({ ...d, style: this.bar(d.pct, 'var(--navy-500)') }));
+
+    const reportStats = [
+      { label: 'متوسط وقت الرد', value: '3.2 س' },
+      { label: 'نسبة القضايا المكسوبة', value: '87%' },
+      { label: 'رضا العملاء', value: '4.8/5' },
+      { label: 'استشارات مكتملة', value: '1,940' },
+    ];
+
+    // ---- lawyer requests ----
+    const resultInfo = { approved: ['success', 'تم القبول'], rejected: ['danger', 'مرفوض'] };
+    const lawyerRequests = st.requests.map(r => {
+      const res = resultInfo[r.status];
+      return {
+        name: r.name, spec: r.spec, lic: r.lic, date: r.date, initials: this.initials(r.name),
+        isPending: r.status === 'pending', isResolved: r.status !== 'pending',
+        resultLabel: res ? res[1] : '', resultStyle: res ? this.badge(res[0], res[1]) : {},
+        approve: () => this.resolve(r.id, 'approved'), reject: () => this.resolve(r.id, 'rejected'),
+      };
+    });
+    const pendingPreview = lawyerRequests.filter(r => r.isPending).slice(0, 3);
+
+    const activeLawyers = [
+      { name: 'أ. سارة العتيبي', spec: 'تجاري وشركات', cases: 12, rating: '4.9' },
+      { name: 'أ. خالد الدوسري', spec: 'عقاري', cases: 9, rating: '4.7' },
+      { name: 'أ. عبدالله الحربي', spec: 'عمالي', cases: 7, rating: '4.8' },
+      { name: 'أ. نورة الزهراني', spec: 'أحوال شخصية', cases: 6, rating: '4.6' },
+    ].map(l => ({ ...l, initials: this.initials(l.name) }));
+
+    const clients = [
+      { name: 'شركة الأفق للتجارة', type: 'منشأة', cases: 4, joined: '٢٠٢٤', status: 'نشط', tone: 'success' },
+      { name: 'عبدالعزيز المطيري', type: 'فرد', cases: 1, joined: '٢٠٢٥', status: 'نشط', tone: 'success' },
+      { name: 'مؤسسة نماء التجارية', type: 'منشأة', cases: 2, joined: '٢٠٢٥', status: 'موقوف', tone: 'warning' },
+      { name: 'هند الفيصل', type: 'فرد', cases: 3, joined: '٢٠٢٣', status: 'نشط', tone: 'success' },
+    ].map(c => ({ ...c, initials: this.initials(c.name), badgeStyle: this.badge(c.tone, c.status) }));
+
+    const adminCases = [
+      { id: 'CS-2041', client: 'شركة الأفق للتجارة', lawyer: 'أ. سارة العتيبي', type: 'تجاري', status: 'قيد النظر', tone: 'warning' },
+      { id: 'CS-2033', client: 'عبدالعزيز المطيري', lawyer: 'أ. خالد الدوسري', type: 'عقاري', status: 'نشطة', tone: 'brand' },
+      { id: 'CS-2012', client: 'مؤسسة نماء التجارية', lawyer: 'أ. عبدالله الحربي', type: 'عمالي', status: 'مكتملة', tone: 'success' },
+      { id: 'CS-1998', client: 'هند الفيصل', lawyer: 'أ. نورة الزهراني', type: 'أسري', status: 'قيد النظر', tone: 'warning' },
+    ].map(k => ({ ...k, badgeStyle: this.badge(k.tone, k.status) }));
+
+    const pendingConsults = [
+      { q: 'استفسار عن حقوق الشريك في شركة تضامن', client: 'شركة الأفق', date: 'قبل ٢٠ دقيقة', priority: 'عاجل', tone: 'danger', initials: 'شأ' },
+      { q: 'مراجعة بنود عقد عمل قبل التوقيع', client: 'هند الفيصل', date: 'قبل ساعة', priority: 'عادي', tone: 'neutral', initials: 'هف' },
+      { q: 'إجراءات إخلاء عقار مؤجّر', client: 'عبدالعزيز المطيري', date: 'قبل ٣ ساعات', priority: 'متوسط', tone: 'warning', initials: 'عم' },
+    ].map(q => ({ ...q, badgeStyle: this.badge(q.tone, q.priority) }));
+
+    const messagesVM = st.messages.map(m => {
+      if (m.role === 'user') return { isUser: true, isBot: false, text: m.text };
+      const lw = m.lawyer;
+      return {
+        isUser: false, isBot: true, text: m.text,
+        hasCite: !!m.src, src: m.src || '',
+        hasLawyer: !!lw,
+        lawyerName: lw ? lw.name : '', lawyerSpec: lw ? lw.spec : '', lawyerRating: lw ? lw.rating : '',
+        lawyerInitials: lw ? this.initials(lw.name) : '',
+        book: () => this.setState({ screen: 'login', role: 'client' }),
+      };
+    });
+    const consultChips = [
+      'هل يحق لي تعويض عن الفصل من العمل؟',
+      'ما إجراءات تسجيل علامة تجارية جديدة؟',
+      'هل يمكن إخلاء المستأجر قبل نهاية العقد؟',
+      'كيف تُحسب النفقة والحضانة بعد الطلاق؟',
+    ].map(c => ({ text: c, onClick: () => this.submitConsult(c) }));
+
+    return {
+      isLogin: st.screen === 'login', isClient: st.screen === 'client', isAdmin: st.screen === 'admin',
+      isConsult: st.screen === 'consult',
+      goConsult: () => this.setState({ screen: 'consult' }),
+      backLogin: () => this.setState({ screen: 'login' }),
+      messages: messagesVM, consultChips,
+      consultInput: st.consultInput,
+      onConsultInput: (e) => this.setState({ consultInput: e.target.value }),
+      onConsultKey: (e) => { if (e.key === 'Enter') { e.preventDefault(); this.submitConsult(this.state.consultInput); } },
+      sendConsult: () => this.submitConsult(this.state.consultInput),
+      // login
+      loginTitle, loginSub,
+      loginDest: isClientRole ? 'لوحة العميل' : 'لوحة الإدارة',
+      switchPrompt: isClientRole ? 'ليس لديك حساب؟' : 'مشكلة في الدخول؟',
+      switchAction: isClientRole ? 'أنشئ حساباً' : 'تواصل مع الدعم',
+      segClientStyle: this.segStyle(isClientRole), segStaffStyle: this.segStyle(!isClientRole),
+      pickClient: () => this.setState({ role: 'client' }),
+      pickStaff: () => this.setState({ role: 'staff' }),
+      doLogin: () => this.setState({ screen: isClientRole ? 'client' : 'admin' }),
+      logout: () => this.setState({ screen: 'login', nav: 'overview', clientTab: 'consult' }),
+      // client
+      clientStats, consultations, cases,
+      consultCount: consultations.length, caseCount: cases.length,
+      showConsult: st.clientTab === 'consult', showCases: st.clientTab === 'cases',
+      tabConsultStyle: this.tabStyle(st.clientTab === 'consult'),
+      tabCasesStyle: this.tabStyle(st.clientTab === 'cases'),
+      tabConsult: () => this.setState({ clientTab: 'consult' }),
+      tabCases: () => this.setState({ clientTab: 'cases' }),
+      newConsult: () => {},
+      // admin
+      navItems, navTitle: cur.title, navSubtitle: cur.sub,
+      navOverview: st.nav === 'overview', navLawyers: st.nav === 'lawyers',
+      navClients: st.nav === 'clients', navCases: st.nav === 'cases', navReports: st.nav === 'reports',
+      kpis, trend, revenue, breakdown, perf, reportStats,
+      lawyerRequests, pendingPreview, pendingCount,
+      hasPending: pendingCount > 0, noPending: pendingCount === 0,
+      goLawyers: () => this.setNav('lawyers'),
+      activeLawyers, clients, adminCases, pendingConsults,
+    };
+  }
+}
+</script>
+</body>
+</html>
